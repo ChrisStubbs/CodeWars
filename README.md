@@ -1,2 +1,2 @@
 # CodeWars
-Repository for Code Kata.
+Repository for Code Kata
