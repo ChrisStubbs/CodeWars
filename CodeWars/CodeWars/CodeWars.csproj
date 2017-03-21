@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="FindTheOddInt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShuffledArray.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
