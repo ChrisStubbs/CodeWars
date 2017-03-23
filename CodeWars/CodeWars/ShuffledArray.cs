@@ -4,7 +4,7 @@
     using System.Linq;
     using NUnit.Framework;
 
-    public class Kata
+    public class Kata1
     {
         public int[] ShuffledArray(int[] shuffled)
         {
@@ -35,7 +35,7 @@
         [Test]
         public void BasicTests()
         {
-            var kata = new Kata();
+            var kata = new Kata1();
 
             Assert.AreEqual(new int[] { 1, 2, 3, 6 }, kata.ShuffledArray(new int[] { 1, 12, 3, 6, 2 }));
 
