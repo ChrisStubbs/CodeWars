@@ -1,7 +1,28 @@
-﻿using System.Collections.Generic;
+﻿//https://www.codewars.com/kata/57814d79a56c88e3e0000786/train/csharp
+/*
+Instructions
+Output
+Past Solutions
+For building the encrypted string:
+Take every 2nd char from the string, then the other chars, that are not every 2nd char, and concat them as new String.
+Do this n times!
+
+Examples:
+
+"This is a test!", 1 -> "hsi  etTi sats!"
+"This is a test!", 2 -> "hsi  etTi sats!" -> "s eT ashi tist!"
+Write two methods:
+
+string Encrypt(string text, int n)
+string Decrypt(string encryptedText, int n)
+For both methods:
+If the input-string is null or empty return exactly this value!
+If n is <= 0 then return the input text.
+*/
+using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
-//https://www.codewars.com/kata/57814d79a56c88e3e0000786/train/csharp
+
 namespace CodeWars
 {
     public class Kata
@@ -9,6 +30,8 @@ namespace CodeWars
 
         public static string Encrypt(string text, int n)
         {
+            if (text == null) return null;
+
             for (int i = 0; i < n; i++)
             {
                 var charArray = text.ToCharArray();
@@ -35,6 +58,7 @@ namespace CodeWars
 
         public static string Decrypt(string encryptedText, int n)
         {
+            if (encryptedText == null) return null;
             for (int i = 0; i < n; i++)
             {
                 encryptedText = DoDecrypt(encryptedText);
@@ -111,6 +135,9 @@ namespace CodeWars
         {
             Assert.AreEqual(null, Kata.Encrypt(null, 0));
             Assert.AreEqual(null, Kata.Decrypt(null, 0));
+            Assert.AreEqual(null, Kata.Decrypt(null, 5));
+            Assert.AreEqual(null, Kata.Encrypt(null, 5));
+            Assert.AreEqual(null, Kata.Encrypt(null, 0));
         }
 
     }
